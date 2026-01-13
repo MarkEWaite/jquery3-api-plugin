@@ -101,6 +101,24 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi-maven-plugin</artifactId>
+        <configuration>
+          <analysisConfiguration>
+            <revapi.differences>
+              <differences>
+                <item>
+                  <ignore>true</ignore>
+                  <code>java.class.removed</code>
+                  <old>class io.jenkins.plugins.jquery3.api.JQuery3Api</old>
+                  <justification>This class was never API anyway</justification>
+                </item>
+              </differences>
+            </revapi.differences>
+          </analysisConfiguration>
+        </configuration>
+      </plugin>
 
     </plugins>
   </build>
